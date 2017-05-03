@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+	<title>grain-read-more demo</title>
+
+	<script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+	<link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+	<link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+	<link rel="import" href="../grain-html-import.html">
+
+</head>
+<body>
+<div class="vertical-section-container centered">
+	<h3>Basic grain-read-more demo</h3>
+	<demo-snippet>
+		<template>
+			<grain-html-import href="../grain-html-import-example.html" if-tag-not-available="grain-html-import-example"></grain-html-import>
+			<grain-html-import-example>
+				I'm going to be loaded
+			</grain-html-import-example>
+		</template>
+	</demo-snippet>
+	For the full code of the tag "grain-html-import-example" please see <a href="../grain-html-import-example.html">../grain-html-import-example.html</a>
+</div>
+</body>
+</html>

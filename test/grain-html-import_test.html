@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+	<title>grain-read-more test</title>
+
+	<script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+	<script src="../../web-component-tester/browser.js"></script>
+
+	<link rel="import" href="../grain-html-import.html">
+</head>
+<body>
+
+<test-fixture id="BasicTestFixture">
+	<template>
+		<grain-html-import href="../grain-html-import-example.html" if-tag-not-available="grain-html-import-example"></grain-html-import>
+		<grain-html-import-example>
+			I'm going to be loaded
+		</grain-html-import-example>
+	</template>
+</test-fixture>
+
+<script>
+	suite('grain-read-more', function() {
+
+		test('loading of grain-html-import-example works ', function(done) {
+			let elements = fixture('BasicTestFixture');
+			console.log(window.customElements.get('grain-html-import-example'));
+			setTimeout(function() {
+				assert.isOk(window.customElements.get('grain-html-import-example'));
+				done();
+			}, 250);
+		});
+
+	});
+</script>
+
+</body>
+</html>

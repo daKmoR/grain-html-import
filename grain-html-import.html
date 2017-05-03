@@ -1,0 +1,39 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../polymer/lib/utils/import-href.html">
+
+<dom-module id="grain-html-import">
+	<script>
+
+		class GrainHtmlImport extends Polymer.Element {
+
+			static get is() { return 'grain-html-import' }
+
+			static get properties() {
+				return {
+					href: {
+						type: String,
+						reflectToAttribute: true
+					},
+					ifTagNotAvailable: {
+						type: String,
+						reflectToAttribute: true
+					}
+				};
+			}
+
+			constructor() {
+				super();
+			}
+
+			ready() {
+				super.ready();
+				if (!window.customElements.get(this.ifTagNotAvailable)) {
+					Polymer.importHref(this.href);
+				}
+			}
+
+		}
+
+		customElements.define(GrainHtmlImport.is, GrainHtmlImport);
+	</script>
+</dom-module>
